@@ -1,0 +1,89 @@
+@use "./variables" as *;
+@use "./colors.scss" as *;
+@use "./type.scss" as *;
+
+@mixin bg-image($image, $pos: center) {
+  background-image: linear-gradient(to top, rgb(0, 0, 0, 0.3) 20%, transparent), $image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: $pos;
+}
+
+@mixin flex($direction: row, $wrap: nowrap, $justify: center) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  align-items: center;
+  justify-content: $justify;
+  gap: $pad-100;
+}
+
+@mixin flex-no-center($direction: column, $align: start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: center;
+  gap: $pad-200;
+}
+
+@mixin form-input-reset() {
+  padding: $pad-150 $pad-200;
+  border-radius: 100vmax;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+@mixin button-reset() {
+  border: none;
+  outline: none;
+  background: none;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+@mixin search-form() {
+  @include form-input-reset();
+  width: 100%;
+  background: transparent;
+  border: 2px solid #666;
+
+  &::placeholder {
+    color: #666;
+    font-style: italic;
+    font-weight: $fw-semi-bold;
+  }
+}
+
+@mixin menu-icon() {
+  display: block;
+  width: 1.3em;
+  height: 3px;
+  border-radius: $br-regular;
+  background: var(--bg-menu);
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+  }
+
+  &::before {
+    transform: translateY(-8px);
+    width: 100%;
+  }
+
+  &::after {
+    transform: translateY(8px);
+    width: 100%;
+  }
+}

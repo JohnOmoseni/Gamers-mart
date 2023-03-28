@@ -1,0 +1,48 @@
+@use "../abstracts/index" as *;
+
+#deals {
+  .amazing-deals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $pad-300;
+    grid-template-rows: min-content;
+
+    .game-item {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 250px;
+      grid-auto-rows: auto;
+      gap: $pad-100;
+      padding: $pad-150;
+      position: relative;
+
+      img {
+        object-fit: contain;
+      }
+
+      .item-offer {
+        width: 100%;
+        padding: $pad-300;
+        backdrop-filter: $backdrop;
+        border-radius: $br-light;
+        box-shadow: $bs-100;
+        user-select: none;
+
+        p {
+          font-weight: $fw-bold;
+
+          &.label {
+            color: var(--text-grey-200);
+            letter-spacing: 2px;
+          }
+        }
+
+        h2 {
+          line-height: 1.4;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "../abstracts/index" as *;
+
+#blogs {
+
+  .blogs-content {
+    margin-top: $pad-300;
+    padding-inline: $pad-300;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+
+    .blog .details {
+      width: 100%;
+      overflow: hidden;
+
+      h3 {
+        @include flex($justify: space-between, $wrap: nowrap);
+        gap: $pad-200;
+        flex-wrap: nowrap;
+        width: fit-content(100%);
+        width: max-content;
+
+        >* {
+          display: inline-block;
+        }
+      }
+
+      .title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        padding-bottom: $pad-200;
+        letter-spacing: $ls-100;
+      }
+
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-200%);
+  }
+}

@@ -1,0 +1,47 @@
+@use "../abstracts/index" as *;
+
+.news-letter {
+  background-color: var(--bg-transparent);
+  background-image: url("/Assets/Images/petals.jpg");
+  background-blend-mode: darken;
+
+  .container {
+    @include flex-no-center();
+    gap: 1em;
+
+    width: 100%;
+    padding-block: 3em;
+    padding-inline: 1em;
+
+    .news-letter-top {
+      width: 100%;
+      text-align: center;
+
+      h3 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.3;
+      }
+
+      p {
+        color: var(--bg-grey);
+      }
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $pad-300;
+
+      input {
+        @include form-input-reset();
+        flex-basis: 100%;
+        background: var(--text-main);
+        border: 1px solid crimson;
+        padding: $pad-200 1em;
+      }
+    }
+  }
+}

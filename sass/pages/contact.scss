@@ -1,0 +1,80 @@
+@use '../abstracts/' as *;
+
+.contact-page {
+   width: 90vw;
+   height: 100%;
+   margin: 1.5em auto;
+
+   h2 {
+      letter-spacing: $ls-100;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: $fw-semi-bold;
+   }
+
+   .content {
+      @include flex-no-center();
+      gap: $pad-300;
+      margin-block: 1em;
+
+      .img-box {
+         width: 100%;
+         border-radius: $br-light;
+         order: 1;
+      }
+
+      form {
+         width: 100%;
+
+         input,
+         textarea {
+            @include form-input-reset();
+            display: inline-block;
+            width: 100%;
+            margin-block: $pad-200;
+            padding: $pad-200 $pad-300;
+            border-radius: $br-light;
+            box-shadow: 2px 3px 6px rgba(black, 0.5),
+               0px -1px rgba(white, 0.3),
+               inset 1px 0px rgba(white, 0.3);
+
+            &:focus {
+               box-shadow: $bs-input-field-200;
+            }
+
+            &::placeholder {
+               color: #666;
+               font-style: italic;
+               font-weight: $fw-semi-bold;
+            }
+         }
+
+         textarea {
+            resize: none;
+
+            &::-webkit-scrollbar {
+               width: 0;
+               height: 0;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 700px) {
+   .contact-page {
+      margin: $pad-600 0 0;
+      width: 100%;
+
+      .content {
+         display: grid;
+         grid-template-columns: 1.5fr minmax(300px, 1fr);
+         gap: 2em;
+         margin-block: 2em;
+
+         .img-box {
+            height: 80%;
+         }
+      }
+   }
+}

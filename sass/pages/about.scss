@@ -1,0 +1,156 @@
+@use '../abstracts/' as *;
+
+.about-page {
+   height: 100%;
+   margin: 2rem auto;
+
+   h2 {
+      letter-spacing: $ls-100;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: $fw-semi-bold;
+      font-family: $ff-header;
+      line-height: 1;
+
+      span {
+         display: inline-block;
+         text-transform: lowercase;
+         font-family: $ff-stylish;
+         font-size: 1.6rem;
+         color: var(--text-variant);
+      }
+   }
+
+   .content {
+      margin-block: 2em;
+
+
+      .img-box {
+         width: 100%;
+         max-width: 500px;
+         margin: 1em auto $pad-500;
+         border-radius: 50%;
+
+         transition: $transition;
+         overflow: hidden;
+         box-shadow: 2px 3px 8px rgba(black, 0.5),
+            0px -1px 3px rgba(white, 0.2);
+         filter: grayscale(60%) contrast(1) brightness(60%);
+
+         &:hover {
+            filter: none;
+
+            img {
+               transition: $transition;
+               scale: 1.05;
+            }
+         }
+      }
+
+      .column2 {
+         .card-container {
+            width: 90%;
+            display: flex;
+            flex-flow: row wrap;
+            margin: auto;
+            justify-content: center;
+            gap: 1em;
+
+            .card {
+               width: 100%;
+               display: grid;
+               padding: $pad-300;
+               align-content: center;
+               border-radius: $br-light;
+               border: 1px solid rgba(white, .3);
+               box-shadow: $bs-300, 1px 2px 8px rgba(black, .6);
+
+               >* {
+                  text-align: center;
+                  width: 100%;
+               }
+
+               h3 {
+                  color: var(--txt-white);
+                  text-shadow: $ts-100;
+                  line-height: 1.3;
+                  letter-spacing: $ls-100;
+                  font-weight: $fw-semi-bold;
+                  padding: $pad-100 0 $pad-200;
+               }
+
+               span {
+                  display: -webkit-box;
+                  -webkit-line-clamp: 5;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+               }
+            }
+         }
+
+         .about-us {
+            text-align: center;
+            width: 100%;
+            margin: 1.5em auto;
+            font-weight: $fw-semi-bold;
+            opacity: 0.8;
+         }
+
+         .btn {
+            width: max-content;
+            display: flex;
+            margin: 0 auto;
+         }
+      }
+   }
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+   .about-page {
+      .content {
+         width: 100vw;
+         margin-left: 50%;
+         transform: translateX(-50%);
+
+         display: grid;
+         grid-template-columns: 1fr 1.5fr;
+         gap: $pad-200;
+         padding: 0 $pad-500;
+
+         .img-box {
+            margin-top: 10%;
+            justify-self: center;
+            width: 350px;
+            height: 350px;
+            border-radius: $br-light;
+         }
+
+         .column2 {
+            .card-container {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+
+               .card {
+                  height: 250px;
+
+                  h3 {
+                     margin-block: $pad-100 0;
+                  }
+               }
+            }
+
+            .about-us {
+               text-align: center;
+            }
+
+            .btn {
+               text-align: center;
+            }
+
+         }
+      }
+   }
+}

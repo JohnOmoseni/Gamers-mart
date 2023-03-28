@@ -1,0 +1,188 @@
+@use "../abstracts/index" as *;
+@use "../components/button" as *;
+@use "../components/game-card" as *;
+
+/* General Main Styling */
+main {
+  --footer-height: 1em;
+
+  min-height: calc(60vh - var(--footer-height));
+  width: 100%;
+  padding: $pad-200;
+  margin-block-start: var(--top-margin, 100px);
+  background-color: var(--bg-main);
+  position: relative;
+
+  .text-portrait {
+    height: 100vh;
+    background-color: rgba(black, 0.7);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+
+    .text {
+      height: 100%;
+      font-size: 10px;
+      text-align: justify;
+      line-height: 10px;
+      background: url('Assets/Images/ghostwire.jpg') no-repeat fixed center top;
+      background-size: cover;
+      mix-blend-mode: hard-light;
+      -webkit-text-fill-color: rgba(white, 0.2);
+    }
+
+  }
+
+  &:has(.text-portrait) {
+    padding: 0;
+  }
+
+  section {
+    padding: $pad-200;
+  }
+
+  section:not(:first-of-type) {
+    padding: 2em $pad-200;
+  }
+
+  .loading {
+    @include flex-no-center($align: center);
+    width: 100%;
+    min-height: calc(70vh - var(--footer-height));
+    justify-content: center;
+
+    span {
+      border-color: crimson transparent !important;
+    }
+  }
+
+
+  .heading {
+    @include flex($direction: column, $justify: space-between);
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 10px black;
+    }
+
+    p {
+      @include flex-no-center($direction: row);
+
+      text-transform: uppercase;
+      color: var(--text--grey);
+      cursor: pointer;
+    }
+  }
+
+  .hero-img {
+    width: 100%;
+    height: min(350px, 60vh);
+    position: relative;
+    z-index: 1;
+    border-radius: $br-light;
+    overflow: hidden;
+    box-shadow: $bs-heroImg;
+
+    h2 {
+      margin-block: 3px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-position: center;
+      transition: $transition;
+
+      &:hover {
+        transform: scale(1.2);
+        filter: opacity(0.8)
+      }
+    }
+
+    .item-offer {
+      background: rgba(black, 0.8);
+      backdrop-filter: blur(1px);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: $pad-150;
+      width: 100%;
+      border-radius: 0 30px 0 0;
+      user-select: none;
+      box-shadow: -2px -2px 10px rgba(black, 0.6);
+
+      p {
+        font-weight: $fw-bold;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      button {
+        margin-block: $pad-150;
+      }
+    }
+  }
+
+  .dots-box {
+    @include flex();
+    gap: 0.5em;
+    padding: $pad-300;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin: 0 auto;
+
+    .dot {
+      width: 1em;
+      height: 1em;
+      border-radius: $br-round;
+      background: var(--bg-grey);
+      box-shadow: $bs-200;
+      cursor: pointer;
+      transition: background $transition;
+
+      &.current-slide {
+        background: #dedede;
+      }
+    }
+  }
+
+  .swiper-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(250px, 48%);
+    gap: calc(4% / 2);
+    overflow: scroll hidden;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .snaps-inline {
+    scroll-snap-type: inline mandatory;
+
+    >* {
+      scroll-snap-align: start;
+    }
+  }
+
+
+}

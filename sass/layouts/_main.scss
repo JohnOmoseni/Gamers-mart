@@ -1,0 +1,116 @@
+@use "../abstracts/index" as *;
+
+@mixin main-laptop() {
+  main {
+    padding: 0 5em;
+    margin-block-start: var(--header-height, 140px);
+    overflow: hidden auto;
+
+    .text-portrait {
+      width: 100vw;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:has(.text-portrait) {
+      padding: 0 5em;
+    }
+
+    section {
+      padding: 0
+    }
+
+    div>:where(*) {
+      padding: 0 2%;
+    }
+
+    div>:where(:not(section)) {
+      padding: 0;
+      margin-block: 0;
+    }
+
+
+    #hero-section {
+      margin-block: 1em 2em;
+    }
+
+    .heading {
+      @include flex($justify: space-between);
+    }
+
+    .search-container .slider {
+
+      .slider-track {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 300px));
+      }
+    }
+
+    .item-offer {
+      right: 0;
+      width: 60%;
+      padding: $pad-300 $pad-200;
+      display: block;
+    }
+
+    .game-card .img-box {
+      flex-basis: 16em;
+    }
+  }
+}
+
+@mixin main-sections_laptop() {
+  main {
+    #categories .swiper-carousel {
+      .swiper-track {
+        gap: calc(4% / 4);
+      }
+    }
+
+    #coming_soon {
+      .body {
+        grid-auto-rows: 300px;
+      }
+
+      .slider-track {
+        height: 100vh;
+      }
+    }
+
+    .news-letter {
+      .container {
+        padding-inline: 3%;
+        @include flex-no-center($direction: row);
+
+        >* {
+          flex: 1;
+        }
+
+        .news-letter-top {
+          text-align: left;
+        }
+
+        form {
+          gap: $pad-200;
+          flex-wrap: nowrap;
+        }
+      }
+    }
+
+    #blogs {
+      margin-bottom: 2em;
+
+      .blogs-content {
+        gap: 1em;
+
+        .swiper-track {
+          grid-auto-columns: min(48%, 350px);
+          gap: calc(4% / 4);
+        }
+
+        .details {
+          padding-inline: $pad-150;
+        }
+      }
+    }
+  }
+}

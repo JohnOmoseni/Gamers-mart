@@ -1,0 +1,88 @@
+@use "../abstracts/index" as *;
+
+#coming_soon {
+  .body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: minmax(300px, 500px);
+    grid-auto-rows: 300px;
+    margin-block: 2em 0;
+    gap: $pad-150;
+  }
+
+  .slider-carousel {
+    grid-column: 1/-1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: $br-light;
+    box-shadow: $bs-heroImg;
+    margin-bottom: $pad-300;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+
+      .swiper-slide:not(.swiper-slide-active) img {
+        opacity: 0;
+      }
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+
+        img {
+          position: absolute;
+          object-fit: cover;
+          object-position: center 5%;
+          transition: $transition;
+        }
+      }
+
+      .swiper-pagination {
+        bottom: 0;
+        padding: $pad-200;
+        background: rgba(black, 0.5);
+        backdrop-filter: blur(1em);
+
+        .swiper-pagination-bullet {
+          width: 14px;
+          height: 14px;
+          background: var(--bg-grey);
+          box-shadow: $bs-200;
+
+          &-active {
+            background: #dedede;
+          }
+        }
+      }
+    }
+
+    .prev-btn {
+      left: $pad-200;
+    }
+
+    .next-btn {
+      right: $pad-200;
+    }
+
+    button.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .game-card {
+    padding: 0;
+
+    .img-box {
+      border-radius: $br-light $br-light 0 0;
+    }
+
+    .details {
+      padding: 0 $pad-150 $pad-150;
+    }
+  }
+}

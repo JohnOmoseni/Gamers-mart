@@ -1,0 +1,150 @@
+@use "../abstracts/index" as *;
+
+#hero-section {
+  .hero {
+    width: 100%;
+
+    .browse-categories {
+      display: none;
+    }
+
+    .hero-sales {
+      @include flex($direction: column);
+      align-items: stretch;
+      gap: 1em;
+
+      >div:first-child {
+        height: 100vh;
+        height: calc(100vh - var(--top-margin) - .8em);
+      }
+
+    }
+  }
+
+  .sub-hero {
+    margin-block: $pad-400;
+
+    .sub-hero-images {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 100%;
+      height: auto;
+
+      >div {
+        height: 50vh;
+      }
+    }
+
+    .offer-box {
+      @include flex-no-center($direction: column);
+      gap: 1.5em;
+      padding: $pad-500 0;
+
+      >* {
+        flex-basis: 100%;
+      }
+
+      .offer {
+        display: grid;
+        grid-template-columns: max-content auto;
+        align-items: center;
+        gap: 1em;
+        padding-left: 0.8rem;
+
+        p:first-of-type {
+          font-size: $fs-sub-heading;
+          letter-spacing: $ls-100;
+        }
+      }
+    }
+  }
+}
+
+@mixin hero-section_laptop() {
+  #hero-section {
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1em;
+
+      .browse-categories {
+        display: block;
+
+        h3 {
+          @include flex();
+          width: max-content;
+          padding: $pad-200;
+          background: var(--dark-variant);
+          line-height: 1.2;
+          border-radius: $br-light $br-light 0 0;
+        }
+
+        ul {
+          border-radius: $br-light;
+          border: 2px solid var(--bg-grey);
+          border-top: 4px solid var(--bg-menu);
+          position: relative;
+          z-index: 1;
+          margin-top: -3px;
+
+          li {
+            cursor: pointer;
+            padding: $pad-200;
+            border-bottom: 2px solid var(--bg-grey);
+
+            &:last-of-type {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+
+      .hero-sales {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(400px, 1fr);
+        grid-auto-rows: 350px;
+
+        >div:first-child {
+          grid-column: 1/-1;
+          height: auto;
+        }
+
+        .hero-img {
+          height: 100%;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            background: linear-gradient(40deg, rgba(black, 0.6), transparent 30%);
+            inset: 0;
+            z-index: -1;
+          }
+        }
+
+      }
+
+    }
+
+    .sub-hero {
+      .sub-hero-images {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+        gap: $pad-300;
+      }
+
+      .offer-box {
+        @include flex-no-center($direction: row);
+        padding: $pad-600 $pad-400;
+
+        .offer {
+          gap: 1.5em;
+        }
+      }
+    }
+  }
+}

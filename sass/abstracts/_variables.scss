@@ -1,0 +1,47 @@
+// Border-Radius
+$br-light: 6px;
+$br-regular: 1em;
+$br-button: 100vmax;
+$br-round: 50%;
+
+// Transition
+$transition: 0.2s linear;
+
+// backdrop-Filter
+$backdrop: blur(1em);
+
+// Padding
+$pad-100: 0.35em;
+$pad-150: 0.5em;
+$pad-200: 0.8em;
+$pad-300: 1em;
+$pad-400: 1.4em;
+$pad-500: 1.8em;
+$pad-500: 2em;
+$pad-600: 2.5em;
+
+$z-index-100: 10;
+$z-index-200: 20;
+$z-index-300: 30;
+
+// Letter-spacing 
+$ls-100: 1px;
+
+// Text Shadow 
+$ts-100: 1px 1px 8px rgba(black, 0.5);
+$ts-200: 3px 3px 4px rgba(black, 0.8);
+$ts-300: 3px 3px 4px rgba(black, 0.8),
+  -1px -1px 4px rgba(white, 0.3);
+
+// Box-Shadow
+$bs-100: 0px 2px 10px rgba(black, 0.3);
+$bs-200: 3px 3px 10px 3px rgba(black, 0.4);
+$bs-300: 4px 4px 10px rgba(black, 0.2),
+  inset -10px -10px 20px rgba(black, 0.5);
+
+$bs-heroImg: 0px 0px 10px 10px rgba(black, 0.3);
+$bs-input-field: inset 2px 3px rgba(black, 0.5), inset -1px -1px rgba(white, 0.2);
+$bs-input-field-200: inset 2px 2px 6px rgba(black, 0.3),
+  inset -4px -4px 10px rgba(#111, 0.5), inset -1px -1px rgba(white, 0.2);
+$bs-navbar: 4px 4px 10px rgba(black, 0.2),
+  inset -10px -10px 20px rgba(black, 0.5),

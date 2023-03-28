@@ -1,0 +1,123 @@
+@use "../abstracts/index" as *;
+
+#cart-page {
+  position: relative;
+  margin-block: $pad-300;
+
+  .cart {
+    @include flex-no-center();
+    gap: 3em;
+  }
+
+  ul.even-rows {
+    @include flex-no-center();
+    gap: 1em;
+    width: 100%;
+
+    .cart-details {
+      width: 100%;
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr min-content min-content;
+      gap: $pad-300;
+      align-items: center;
+
+
+      .game {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        gap: $pad-200;
+        place-items: center
+      }
+
+      h2 {
+        justify-self: start;
+        font-size: $fs-350;
+      }
+
+      .game-cover {
+        width: 80px;
+        height: 60px;
+        border-radius: $br-light;
+      }
+
+      .price {
+        margin-top: 2px;
+        font-size: $fs-300;
+      }
+
+      span {
+        padding-inline: $pad-100;
+        justify-self: end;
+        cursor: pointer;
+        line-height: 0.2;
+      }
+    }
+
+    li.no-item {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .checkout {
+    @include flex-no-center();
+    width: max-content;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    gap: 5em;
+    background: var(--text-dark);
+    padding: 1em $pad-200;
+    border-radius: $br-light;
+
+    p {
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      line-height: 1.6;
+    }
+  }
+}
+
+@mixin cart-page_laptop {
+  #cart-page {
+    margin-block: 3em 2em;
+
+    .cart {
+      display: grid;
+      grid-template-columns: 1fr minmax(min-content, 500px);
+      gap: $pad-500;
+      align-items: start;
+
+      &:has(.no-item) {
+        align-items: center;
+      }
+
+      ul.even-rows {
+        padding-inline: 0;
+
+
+        .cart-details {
+          grid-template-columns: minmax(50%, 1fr) 100px min-content;
+          gap: $pad-500;
+
+          .game-cover {
+            width: 120px;
+            height: 80px;
+            border-radius: 4px;
+          }
+
+          h2 {
+            font-size: $fs-400;
+          }
+        }
+      }
+
+      .checkout {
+        align-self: start;
+      }
+    }
+  }
+}

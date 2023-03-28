@@ -1,0 +1,37 @@
+@use "../abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: $fw-regular;
+  font-family: $ff-body;
+  color: var(--text-clr);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: $fs-primary-header;
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: $fs-secondary-header;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: $fs-sub-heading;
+  line-height: 1.2;
+}

@@ -1,0 +1,25 @@
+@use "../abstracts/index" as *;
+
+
+#categories,
+#accessories {
+  gap: 0;
+  overflow: hidden;
+}
+
+#categories {
+  display: flow-root;
+
+  .heading {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .swiper-carousel {
+    width: 100%;
+    margin: $pad-400 auto;
+    height: 300px;
+    overflow: hidden;
+  }
+}

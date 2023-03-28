@@ -1,0 +1,245 @@
+@use "../abstracts/index" as *;
+
+.wrapper header {
+  width: 100%;
+  background: var(--bg-header);
+  position: fixed;
+  inset: 0 auto auto;
+  z-index: $z-index-300;
+
+  border-radius: 0 0 3px 3px;
+  box-shadow: $bs-navbar;
+
+  >* {
+    padding: $pad-100 2%;
+  }
+
+  nav {
+    @include flex($justify: space-between);
+  }
+
+  .top-nav {
+    display: flex;
+    border-bottom: 2px solid var(--text-grey-200);
+  }
+
+  .even-cols {
+    @include flex();
+    gap: $pad-100;
+
+    >* {
+      color: var(--text-grey-100);
+    }
+
+    p {
+      font-family: $ff-stylish;
+    }
+  }
+
+  .index-nav {
+    padding-block: $pad-200;
+  }
+
+  .index {
+    .menu-icon {
+      @include flex();
+      width: 1.6em;
+      height: 1.6em;
+      cursor: pointer;
+
+      .menu-span {
+        @include menu-icon();
+      }
+    }
+
+    h1 {
+      font-family: $ff-header;
+      line-height: 0.9;
+      width: 100%;
+      color: var(--text-clr);
+
+      span {
+        display: inline-block;
+        font-family: $ff-stylish;
+        font-size: 1.9rem;
+        color: var(--text-variant);
+      }
+    }
+  }
+
+  .cart-box {
+    @include flex();
+    gap: $pad-100;
+
+    .shopping-cart {
+      margin-top: 5px;
+    }
+  }
+
+  form {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    height: calc(100vh - 70px);
+    padding-block: 2em;
+
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    position: relative;
+    transition: 0.6s linear;
+
+    .close-btn {
+      position: absolute;
+      right: 1em;
+      top: $pad-150;
+      font-size: $fs-350;
+      cursor: pointer;
+    }
+
+    form {
+      @include flex();
+      align-self: center;
+      margin-block: $pad-300;
+
+      input {
+        @include search-form();
+      }
+    }
+
+    ul {
+      @include flex-no-center();
+      gap: $pad-300;
+      padding-inline: 2%;
+
+      li {
+        @include flex();
+
+        a {
+          font-size: $fs-body;
+          font-weight: $fw-semi-bold;
+          text-transform: uppercase;
+          transition: $transition;
+
+
+          &:first-child a {
+            color: var(--text-variant);
+          }
+        }
+
+        &:hover *,
+        &:active * {
+          color: var(--text-variant);
+          stroke: var(--text-variant);
+          font-size: $fs-350;
+        }
+      }
+
+
+    }
+
+    >div:last-child {
+      @include flex();
+      line-height: 1;
+      margin-block: auto 1em;
+
+      p {
+        font-size: $fs-100;
+        text-transform: uppercase;
+        font-weight: $fw-semi-bold;
+      }
+    }
+  }
+
+  .nav-links-laptop {
+    display: none;
+  }
+
+  .nav-links.open-nav {
+    animation: fadeIn 0.6s forwards;
+    display: flex;
+  }
+}
+
+@mixin header-laptop() {
+  .wrapper header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    >* {
+      padding: $pad-150 2%;
+    }
+
+    .index-nav {
+      padding-block: 0.6em $pad-150;
+
+      .index .menu-icon {
+        display: none;
+      }
+    }
+
+    form {
+      display: block;
+
+      input {
+        @include search-form();
+      }
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .nav-links-laptop {
+      @include flex($justify: space-between);
+      opacity: 1;
+      width: 100%;
+      padding-block: 0;
+
+
+      ul {
+        @include flex();
+        padding: $pad-200 $pad-300;
+        gap: 3em;
+
+        li a {
+          font-size: $fs-nav-links;
+          font-weight: $fw-semi-bold;
+          text-transform: uppercase;
+          transition: $transition;
+
+          &:hover,
+          &.active {
+            color: var(--text-variant);
+            font-size: $fs-300;
+          }
+        }
+      }
+
+      div {
+        @include flex();
+        line-height: 1;
+
+        p {
+          font-size: $fs-100;
+          text-transform: uppercase;
+          font-weight: $fw-semi-bold;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(1.3) translateY(-100%);
+  }
+
+  to {
+    transform: scale(1) translateY(0%);
+  }
+}

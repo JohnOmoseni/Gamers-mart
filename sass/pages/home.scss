@@ -1,0 +1,12 @@
+@use "../layouts/" as *;
+
+// Responsive Styling
+@use "../utilities/index" as *;
+
+@media screen and (min-width: 700px) {
+  @include header-laptop();
+  @include main-laptop();
+  @include hero-section_laptop();
+  @include main-sections_laptop();
+  @include footer-laptop();
+}

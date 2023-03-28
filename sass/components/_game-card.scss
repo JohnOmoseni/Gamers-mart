@@ -1,0 +1,118 @@
+@use "../abstracts/index" as *;
+
+.game-card {
+  display: grid;
+  grid-template-rows: minmax(160px, 1fr) auto;
+  gap: $pad-200;
+  height: 100%;
+  padding: $pad-150;
+  background: #2e2e2ece;
+  backdrop-filter: $backdrop;
+  border-radius: $br-light;
+  box-shadow: $bs-100;
+
+
+  .img-box {
+    position: relative;
+    width: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: var(--text-variant);
+      width: max-content;
+      padding: $pad-200;
+      border-radius: $br-light 0 $br-light 0;
+      box-shadow: $bs-100;
+    }
+
+    .slide {
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .slide {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+
+    }
+  }
+
+  .add-to-cart {
+    @include flex();
+    position: relative;
+    padding: $pad-150 $pad-300;
+    width: max-content;
+    background: var(--text-main);
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 $br-light 0 0;
+    transform: translateY(100px);
+    cursor: pointer;
+    background: #ccc;
+    box-shadow: $bs-200;
+
+    P {
+      color: var(--text-button);
+      font-size: $fs-200;
+      font-weight: $fw-bold;
+    }
+
+    svg {
+      fill: var(--text-button);
+      margin-top: -2px;
+    }
+  }
+
+  .favorite {
+    width: 30px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: $pad-200;
+    right: $pad-150;
+    border-radius: $br-light;
+    transform: translateY(-100px);
+    cursor: pointer;
+  }
+
+  .details {
+    width: 100%;
+    overflow: hidden;
+
+    .game-genre {
+      text-transform: uppercase;
+      color: var(--bg-grey);
+    }
+
+    h3 {
+      line-height: 1.2;
+      margin-block: 0.3em;
+      letter-spacing: 1px;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .price {
+      color: var(--text-variant);
+      font-size: $fs-250;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use "../abstracts/index" as *;
+
+.paymentTab {
+  margin-block: 2em 0;
+
+  .paymentForm {
+    width: min(90%, 700px);
+    margin: 0 auto;
+    border-radius: $br-light;
+    backdrop-filter: $backdrop;
+  }
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: $fw-semi-bold;
+  }
+
+  form {
+    margin-block: 2em 1em;
+    @include flex-no-center();
+    gap: $pad-500;
+  }
+
+  .formGroup {
+    @include flex-no-center();
+    width: 100%;
+    gap: $pad-200;
+
+    label {
+      text-transform: uppercase;
+      font-weight: $fw-semi-bold;
+      letter-spacing: 1px;
+    }
+
+    input {
+      @include form-input-reset();
+      width: 100%;
+      padding: $pad-400 $pad-300;
+      border-radius: $br-light;
+      box-shadow: 2px 2px 4px rgba(black, 0.2),
+        0px -1px rgba(white, 0.2);
+
+      &:focus-visible {
+        box-shadow: $bs-input-field;
+      }
+
+    }
+  }
+
+  .btn {
+    margin-top: 1em;
+    border-radius: $br-light;
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    text-shadow: 0 0 2px #000;
+  }
+
+  .paymentMethodIcons {
+    @include flex();
+    gap: 1em;
+    width: 60%;
+    margin: 2em auto;
+
+    div {
+      width: 100%;
+      display: grid;
+      place-items: center;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+}

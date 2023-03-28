@@ -1,0 +1,5 @@
+@use '../components/cart' as *;
+
+@media screen and (min-width: 800px) {
+  @include cart-page_laptop;
+}

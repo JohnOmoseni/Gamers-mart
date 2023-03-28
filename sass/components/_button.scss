@@ -1,0 +1,169 @@
+@use "../abstracts/index" as *;
+
+/* Buttons Styling */
+%send-button {
+  @include button-reset();
+  position: relative;
+  width: fit-content;
+  padding: $pad-150 $pad-400;
+  margin-block: $pad-100;
+  font-weight: $fw-semi-bold;
+  color: var(--text-main);
+  background: crimson;
+
+  border-radius: 100vmax;
+  box-shadow: $bs-300;
+  cursor: pointer;
+  transform: translateY(0px);
+  transition: $transition;
+
+  &:hover {
+    background: rgba(17, 17, 17, 0.649);
+  }
+
+  &:active {
+    transform: translateY(4px);
+  }
+}
+
+%buy-now-btn {
+  @include flex();
+  width: fit-content;
+  gap: 1em;
+  padding: $pad-150 $pad-200;
+  margin-block: $pad-300 $pad-100;
+  font-weight: $fw-semi-bold;
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.562);
+  border-radius: 100vmin;
+  position: relative;
+  cursor: pointer;
+}
+
+%nav-btns {
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  background: #ccc;
+  font-weight: $fw-semi-bold;
+  font-size: $fs-400;
+  color: #111;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: $br-round;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  box-shadow: $bs-200;
+}
+
+%form-button {
+  @include flex();
+  width: min-content;
+  text-transform: uppercase;
+  padding: $pad-100 $pad-300;
+  font-weight: $fw-bold;
+  background: crimson;
+  color: black;
+  border: none;
+  border-radius: $br-regular;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
+  margin: auto
+}
+
+%checkout-btn {
+  @include button-reset();
+  background: var(--text-variant);
+  width: 100%;
+  padding: 1em;
+  color: var(--text-main);
+  text-align: center;
+  line-height: 1.2;
+  display: inline-block;
+  position: relative;
+  border-radius: $br-light;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background: crimson;
+  }
+
+  &:active {
+    transform: translateY(4px);
+  }
+
+}
+
+%submit-search {
+  @include button-reset();
+  @include flex();
+  padding: $pad-150 $pad-200;
+  background: var(--text-variant);
+  border-radius: $br-light;
+  padding: $pad-100 0.5em;
+  width: 2.5em;
+  height: 2em;
+  line-height: 0;
+}
+
+.wrapper .nav-links form button {
+  @extend %submit-search;
+}
+
+main .hero-img .item-offer button,
+main #deals .game-item button {
+  @extend %buy-now-btn;
+  transition: border $transition 0.5s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgb(255, 18, 65);
+    width: 0%;
+    height: 100%;
+    transition: $transition;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    border: none;
+    background: none;
+
+    &::before {
+      border: 1px solid inherit;
+      width: 100%;
+    }
+  }
+}
+
+main #coming_soon .slider-carousel button {
+  @extend %nav-btns;
+}
+
+main .news-letter form button {
+  @extend %form-button;
+  transform: translateY(0%);
+  transition: $transition;
+
+  &:hover {
+    letter-spacing: 1px;
+  }
+
+  &:active {
+    transform: translateY(4px);
+  }
+}
+
+main .cart .checkout a,
+main .purchase-btn {
+  @extend %checkout-btn;
+}
+
+.wrapper :is(.about-page button, .contact-page button) {
+  @extend %send-button;
+}
