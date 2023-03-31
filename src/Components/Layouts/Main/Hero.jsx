@@ -7,7 +7,6 @@ import SubHero from "./SubHero";
 
 function Hero() {
   const { products } = useShopContext();
-
   const HeroSlice = products.slice(0, 5);
 
   return (

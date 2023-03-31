@@ -4,7 +4,6 @@ import useShopContext from "../../../Context/ShopContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdRemoveShoppingCart } from "react-icons/md";
 
-import { FiHeart } from "react-icons/fi";
 import { IoMdHeart } from "react-icons/io";
 
 function GameCard({ id, img, title, genre, price, showPrice }) {

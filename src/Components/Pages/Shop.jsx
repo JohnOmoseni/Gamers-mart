@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import useShopContext from "../../Context/ShopContext";
 import GameCard from "../Layouts/Main/GameCard";
 import { motion } from "framer-motion";
@@ -21,10 +22,16 @@ const shopVariant = {
 
 function Shop() {
   const { products } = useShopContext();
+  const shopRef = useRef();
+
+  useEffect(() => {
+    if (shopRef.current) shopRef.current.scrollIntoView();
+  }, []);
 
   return (
     <motion.div
       className="shop"
+      ref={shopRef}
       variants={shopVariant}
       initial="hidden"
       animate="animate"

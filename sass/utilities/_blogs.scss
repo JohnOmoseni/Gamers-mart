@@ -4,7 +4,6 @@
 
   .blogs-content {
     margin-top: $pad-300;
-    padding-inline: $pad-300;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -18,9 +17,9 @@
       h3 {
         @include flex($justify: space-between, $wrap: nowrap);
         gap: $pad-200;
+        font-size: 0.8rem;
         flex-wrap: nowrap;
-        width: fit-content(100%);
-        width: max-content;
+        width: 100%;
 
         >* {
           display: inline-block;
@@ -31,7 +30,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
 
-        padding-bottom: $pad-200;
+        padding-bottom: $pad-300;
         letter-spacing: $ls-100;
       }
 

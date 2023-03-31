@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import contactus from "/Assets/Images/contact-us.png";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
@@ -23,6 +23,11 @@ const contactVariant = {
 function Contact() {
   const [inputValues, setInputValues] = useState({ user_name: "", user_email: "", message: "" });
   const form = useRef();
+  const contactRef = useRef();
+
+  useEffect(() => {
+    if (contactRef.current) contactRef.current.scrollIntoView();
+  }, []);
 
   const handleInputChange = e => {
     const value = e.target.value;
@@ -46,6 +51,7 @@ function Contact() {
   return (
     <motion.div
       className="contact-page"
+      ref={contactRef}
       variants={contactVariant}
       initial="hidden"
       animate="animate"

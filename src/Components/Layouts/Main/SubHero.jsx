@@ -9,7 +9,7 @@ export const Content = ({ title, subtitle, icon: Icon }) => {
   return (
     <div className="offer">
       <span>
-        <Icon />
+        <Icon size="30" />
       </span>
       <div>
         <p className="fw-bold">{title}</p>

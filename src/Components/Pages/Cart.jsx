@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import useShopContext from "../../Context/ShopContext";
@@ -25,14 +25,18 @@ function Cart() {
   const { cart, total, updatePrice } = useShopContext();
   const totalPrice = total;
   const noOfItems = cart.length ? cart.length : 0;
+  const cartRef = useRef();
 
   useEffect(() => {
     updatePrice(cart);
+
+    if (cartRef.current) cartRef.current.scrollIntoView();
   }, []);
 
   return (
     <motion.section
       id="cart-page"
+      ref={cartRef}
       variants={cartVariant}
       initial="hidden"
       animate="animate"

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cardAboutDetails } from "../../constants";
@@ -33,8 +34,15 @@ const Card = ({ title, icon: Icon, subtitle }) => {
 };
 
 function About() {
+  const aboutRef = useRef();
+
+  useEffect(() => {
+    if (aboutRef.current) aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
     <motion.div
+      ref={aboutRef}
       className="about-page"
       variants={aboutVariant}
       initial="hidden"

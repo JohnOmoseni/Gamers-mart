@@ -20,7 +20,23 @@
 
   .top-nav {
     display: flex;
+    align-items: center;
     border-bottom: 2px solid var(--text-grey-200);
+
+    .even-cols:first-of-type p:first-of-type {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      span {
+
+        color: inherit;
+      }
+    }
+
+    svg {
+      stroke: #555;
+    }
   }
 
   .even-cols {
@@ -82,11 +98,12 @@
 
   .nav-links {
     display: flex;
+    gap: 1em;
+    flex-direction: column;
     height: calc(100vh - 70px);
     padding-block: 2em;
+    border-top: 1px solid #3e3e3e7c;
 
-    flex-direction: column;
-    gap: 1em;
     width: 100%;
     position: relative;
     transition: 0.6s linear;
@@ -143,7 +160,7 @@
     >div:last-child {
       @include flex();
       line-height: 1;
-      margin-block: auto 1em;
+      margin-block: auto $pad-600;
 
       p {
         font-size: $fs-100;

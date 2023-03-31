@@ -10,7 +10,6 @@ import Blogs from "./Blogs";
 function Main() {
   return (
     <>
-      <PortraitText />
       <Hero />
       <Categories />
       <Deals />

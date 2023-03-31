@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { CgArrowRight } from "react-icons/cg";
+
 import useShopContext from "../../../Context/ShopContext";
 
 function DealCard({ id, img, price, title }) {
@@ -27,7 +29,9 @@ function DealCard({ id, img, price, title }) {
         <p className="price fs-small">Save {`$${price}`}</p>
         <button onClick={() => handleClick(id, img, title, price)}>
           {isInCart ? "Remove from Cart" : "Buy Now"}
-          <span>&rarr;</span>
+          <span>
+            <CgArrowRight size="20" />
+          </span>
         </button>
       </div>
     </div>

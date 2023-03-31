@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useShopContext from "../../../Context/ShopContext";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { HiShoppingCart } from "react-icons/hi";
 import Nav from "./Nav";
@@ -62,15 +62,17 @@ function Header({ elem, search, onInputChange, handleSearch }) {
         </Link>
       </nav>
       <NavLaptop />
-      {openMenu && (
-        <Nav
-          search={search}
-          handleCloseMenu={handleCloseMenu}
-          onInputChange={onInputChange}
-          setOpenMenu={setOpenMenu}
-          handleSearch={handleSearch}
-        />
-      )}
+      <AnimatePresence presenceAffectsLayout>
+        {openMenu && (
+          <Nav
+            search={search}
+            handleCloseMenu={handleCloseMenu}
+            onInputChange={onInputChange}
+            setOpenMenu={setOpenMenu}
+            handleSearch={handleSearch}
+          />
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

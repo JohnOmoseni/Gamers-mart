@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Img1 from "../../Assets/visa2.png";
 import Img2 from "../../Assets/paypal.png";
@@ -31,6 +31,11 @@ const paymentMethodsImages = [Img1, Img2, Img3, Img4];
 
 function PaymentPage() {
   const [inputValues, setInputValues] = useState(input);
+  const paymentRef = useRef();
+
+  useEffect(() => {
+    if (paymentRef.current) paymentRef.current.scrollIntoView();
+  }, []);
 
   const handleInputChange = e => {
     const inputName = e.target.name;
@@ -46,6 +51,7 @@ function PaymentPage() {
   return (
     <motion.div
       className={styles.paymentTab}
+      ref={paymentRef}
       variants={paymentVariant}
       initial="hidden"
       animate="animate"

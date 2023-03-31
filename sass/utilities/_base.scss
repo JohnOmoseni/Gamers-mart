@@ -8,8 +8,8 @@ main {
 
   min-height: calc(60vh - var(--footer-height));
   width: 100%;
-  padding: $pad-200;
-  margin-block-start: var(--top-margin, 100px);
+  padding: 0.6rem;
+  margin-block-start: 100px;
   background-color: var(--bg-main);
   position: relative;
 
@@ -37,12 +37,8 @@ main {
     padding: 0;
   }
 
-  section {
-    padding: $pad-200;
-  }
-
   section:not(:first-of-type) {
-    padding: 2em $pad-200;
+    padding: 2em $pad-150;
   }
 
   .loading {
@@ -64,6 +60,7 @@ main {
 
     h2 {
       letter-spacing: 1px;
+      font-size: 1.5rem;
       line-height: 1.2;
       text-transform: uppercase;
       text-shadow: 1px 1px 10px black;

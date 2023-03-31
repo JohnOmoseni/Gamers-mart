@@ -40,7 +40,7 @@ function Mart() {
 
   useEffect(() => {
     const headerHeight = headerRef.current.offsetHeight;
-    mainRef.current.style.setProperty("--top-margin", ` ${headerHeight}px`);
+    if (mainRef.current) mainRef.current.style.setProperty("--top-margin", ` ${headerHeight}px`);
   });
 
   return (
@@ -51,6 +51,7 @@ function Mart() {
         onInputChange={onInputChange}
         handleSearch={handleSearch}
       />
+
       <main ref={mainRef}>
         <Suspense fallback={<Loader />}>
           <AnimatePresence mode="wait">

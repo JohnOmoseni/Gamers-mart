@@ -1,14 +1,14 @@
-import React from "react";
+import { useRef } from "react";
 import useShopContext from "../../../Context/ShopContext";
-import GameCard from "./GameCard";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
+import GameCard from "./GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
-import { useRef } from "react";
 
 function Accessories() {
   const { products } = useShopContext();
@@ -63,10 +63,10 @@ function Accessories() {
           })}
 
           <div className="swiper-nav-prev" ref={swiperNavPrev}>
-            &lt;
+            <RiArrowLeftSLine fill="#bbb" />
           </div>
           <div className="swiper-nav-next" ref={swiperNavNext}>
-            &gt;
+            <RiArrowRightSLine fill="#bbb" />
           </div>
         </Swiper>
       </div>

@@ -27,11 +27,14 @@ function Blogs() {
             delay: 3000,
           }}
           speed={800}
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={16}
           breakpoints={{
-            700: {
+            800: {
               slidesPerView: 3,
+            },
+            500: {
+              slidesPerView: 2,
             },
           }}
           loop

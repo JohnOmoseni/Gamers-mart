@@ -3,11 +3,21 @@
   src: url('/LobsterTwo-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Pop';
+  src: url('/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/Montserrat-ExtraBold.ttf');
+}
+
 // Font-Family
-$ff-family: "Poppins", sans-serif;
-$ff-header: $ff-family;
-$ff-subheading: $ff-family;
+$ff-family: "Pop", sans-serif;
+$ff-header: "Montserrat", sans-serif;
 $ff-stylish: "Lobster", cursive;
+$ff-subheading: $ff-family;
 $ff-body: $ff-family;
 
 // Font-Weight
@@ -23,15 +33,15 @@ $fs-300: 0.9rem;
 $fs-350: 1rem;
 $fs-400: 1.3rem;
 $fs-500: 1.8rem;
-$fs-600: 2.5rem;
+$fs-600: 2rem;
 $fs-700: 3rem;
 
 $fs-small-text: $fs-200;
 $fs-nav-links: $fs-200;
 $fs-button: $fs-350;
 $fs-body: $fs-300;
-$fs-primary-header: $fs-500;
-$fs-secondary-header: $fs-400;
+$fs-primary-header: $fs-600;
+$fs-secondary-header: $fs-500;
 $fs-sub-heading: $fs-350;
 
 

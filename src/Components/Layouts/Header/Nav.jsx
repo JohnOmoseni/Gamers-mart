@@ -1,6 +1,24 @@
 import { NavLink } from "react-router-dom";
 import { navLinks } from "../../../constants";
 import { FaRegLightbulb } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const navVariant = {
+  hidden: {
+    x: -window.innerWidth,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { ease: "easeIn", duration: 0.5, type: "spring" },
+  },
+  exit: {
+    x: window.innerWidth,
+    opacity: 0,
+    transition: { ease: "easeOut", duration: 0.5, when: "beforeChildren" },
+  },
+};
 
 function Nav({ handleCloseMenu, setOpenMenu, search, onInputChange, handleSearch }) {
   const handleSubmit = e => {
@@ -9,7 +27,13 @@ function Nav({ handleCloseMenu, setOpenMenu, search, onInputChange, handleSearch
   };
 
   return (
-    <div className="nav-links">
+    <motion.div
+      className="nav-links"
+      variants={navVariant}
+      initial="hidden"
+      animate="animate"
+      exit="exit"
+    >
       <span className="close-btn | fw-bold" onClick={handleCloseMenu}>
         &#10006;
       </span>
@@ -37,7 +61,7 @@ function Nav({ handleCloseMenu, setOpenMenu, search, onInputChange, handleSearch
         <FaRegLightbulb />
         <p className="discount-text">Clearance up to 30% off</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

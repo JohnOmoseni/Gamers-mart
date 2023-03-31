@@ -1,10 +1,14 @@
-import React from "react";
+import { FiPhone } from "react-icons/fi";
 
 function Top() {
   return (
     <nav className="top-nav">
       <div className="even-cols">
-        <i className="fa fa-whatsapp"></i>
+        <p>
+          <FiPhone />
+          <span>Call:</span>
+        </p>
+
         <p className="fs-small">+23481684612</p>
       </div>
       <div className="even-cols">

@@ -3,15 +3,19 @@
 .search-container,
 .shop {
    display: flow-root;
-   margin-block: $pad-400;
+   margin-block: $pad-600;
 
    h2 {
       text-align: center;
       text-transform: uppercase;
+      font-family: $ff-header;
 
       span {
          font-style: italic;
+         width: 100%;
+         word-wrap: break-word;
          color: var(--text-variant);
+         font-family: $ff-header;
       }
    }
 

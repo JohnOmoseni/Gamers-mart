@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import useShopContext from "../../Context/ShopContext";
 import GameCard from "../Layouts/Main/GameCard";
@@ -22,8 +23,13 @@ const searchVariant = {
 function Search() {
   const { products } = useShopContext();
   const [searchParams] = useSearchParams();
+  const searchRef = useRef();
 
   const searchTerm = searchParams.get("term") || "";
+
+  useEffect(() => {
+    if (searchRef.current) searchRef.current.scrollIntoView();
+  }, []);
 
   let filteredProducts = [];
   if (searchTerm !== "") {
@@ -35,6 +41,7 @@ function Search() {
   return (
     <motion.div
       className="search-container"
+      ref={searchRef}
       variants={searchVariant}
       initial="hidden"
       animate="animate"

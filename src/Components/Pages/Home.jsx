@@ -1,5 +1,6 @@
-import Main from "../Layouts/Main/Main";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Main from "../Layouts/Main/Main";
 
 const homeVariant = {
   hidden: {
@@ -17,8 +18,13 @@ const homeVariant = {
 };
 
 function Home() {
+  const homeRef = useRef();
+
+  useEffect(() => {
+    if (homeRef.current) homeRef.current.scrollIntoView();
+  }, []);
   return (
-    <motion.div variants={homeVariant} initial="hidden" animate="animate" exit="exit">
+    <motion.div ref={homeRef} variants={homeVariant} initial="hidden" animate="animate" exit="exit">
       <Main />
     </motion.div>
   );

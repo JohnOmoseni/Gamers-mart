@@ -5,7 +5,6 @@ import "../sass/pages/home.scss";
 import "../sass/pages/about.scss";
 import "../sass/pages/contact.scss";
 import "../sass/pages/search.scss";
-import "../sass/pages/testpage.scss";
 
 function App() {
   return (

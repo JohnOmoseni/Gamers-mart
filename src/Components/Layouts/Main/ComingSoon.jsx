@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
+import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 import useShopContext from "../../../Context/ShopContext";
-import GameCard from "./GameCard";
 
+import GameCard from "./GameCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade } from "swiper";
 
@@ -57,10 +58,10 @@ function ComingSoon() {
               );
             })}
             <button className="prev-btn" ref={swiperNavPrev}>
-              &lt;
+              <RiArrowLeftSLine fill="#111" />
             </button>
             <button className="next-btn" ref={swiperNavNext}>
-              &gt;
+              <RiArrowRightSLine fill="#111" />
             </button>
           </Swiper>
         </div>
