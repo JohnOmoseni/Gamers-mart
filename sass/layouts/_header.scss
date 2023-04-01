@@ -160,7 +160,7 @@
     >div:last-child {
       @include flex();
       line-height: 1;
-      margin-block: auto $pad-600;
+      margin-block: auto 4em;
 
       p {
         font-size: $fs-100;
