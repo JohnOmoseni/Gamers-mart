@@ -1,4 +1,4 @@
-### _Gamers Mart_
+# _Gamers Mart_
 
 Welcome to our ecommerce game website built using React! This website offers a wide range of games and gaming accessories to satisfy all of your gaming needs.
 
