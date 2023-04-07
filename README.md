@@ -13,7 +13,7 @@ To use this app, you will need to have the following
 - An internet connection
 - A web browser that supports Javascript.
 
-You can access the ecommerce site by visiting the [](https://gamify-mart.vercel.app) where it is hosted.
+You can access the ecommerce site by visiting the [link](https://gamify-mart.vercel.app) where it is hosted.
 
 ## Installation
 To install and run the website locally, follow these steps:
@@ -26,30 +26,30 @@ To install and run the website locally, follow these steps:
 ## Features
 The Gamers Mart Ecommerce website offers the following features:
 
--A responsive and user-friendly interface.
--A wide selection of games and gaming accessories.
--Cart functionality to add and remove products.
--Checkout process
--A user-engaging and easy-to-navigate UI
+1. A responsive and user-friendly interface.
+2. A wide selection of games and gaming accessories.
+3. Cart functionality to add and remove products.
+4. Checkout process.
+5. A user-engaging and easy-to-navigate UI
 
 ## Further Improvements
 Here are some potential improvements for our ecommerce game website built using React:
 
--Adding more advanced search functionality to make it easier for users to find what they are looking for.
--Checkout process with payment integration
--Implementing a recommendation engine that suggests products based on user preferences and purchase history.
--Enhancing the UI/UX to make it more visually appealing and intuitive.
--Adding more payment options to accommodate users who prefer different payment methods.
+- Adding more advanced search functionality to make it easier for users to find what they are looking for.
+- Checkout process with payment integration
+- Implementing a recommendation engine that suggests products based on user preferences and purchase history.
+- Enhancing the UI/UX to make it more visually appealing and intuitive.
+- Adding more payment options to accommodate users who prefer different payment methods.
 
 ### Built With
 
-** ReactJS
-** SASS
-** SwiperJS
+* ReactJS
+* SASS
+*  SwiperJS
 
 ### Author
 
 **JohnOmoseni**
 
 Contributions
-We welcome contributions from developers who are interested in improving our ecommerce game website built using React.
+_We welcome contributions from developers who are interested in improving our ecommerce game website built using React._
