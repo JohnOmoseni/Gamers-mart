@@ -51,5 +51,5 @@ Here are some potential improvements for our ecommerce game website built using 
 
 **JohnOmoseni**
 
-Contributions
+## Contributions
 _We welcome contributions from developers who are interested in improving our ecommerce game website built using React._
