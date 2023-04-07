@@ -45,7 +45,7 @@ Here are some potential improvements for our ecommerce game website built using 
 
 * ReactJS
 * SASS
-*  SwiperJS
+* SwiperJS
 
 ### Author
 
