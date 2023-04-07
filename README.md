@@ -26,11 +26,11 @@ To install and run the website locally, follow these steps:
 ## Features
 The Gamers Mart Ecommerce website offers the following features:
 
-1. A responsive and user-friendly interface.
-2. A wide selection of games and gaming accessories.
-3. Cart functionality to add and remove products.
-4. Checkout process.
-5. A user-engaging and easy-to-navigate UI
+* A responsive and user-friendly interface.
+* A wide selection of games and gaming accessories.
+* Cart functionality to add and remove products.
+* Checkout process.
+* A user-engaging and easy-to-navigate UI
 
 ## Further Improvements
 Here are some potential improvements for our ecommerce game website built using React:
