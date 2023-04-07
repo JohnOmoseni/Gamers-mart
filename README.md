@@ -13,7 +13,7 @@ To use this app, you will need to have the following
 - An internet connection
 - A web browser that supports Javascript.
 
-You can access the ecommerce site by visiitng the [link](https://gamify-mart.vercel.app) where it is hosted.
+You can access the ecommerce site by visiting the [](https://gamify-mart.vercel.app) where it is hosted.
 
 ## Installation
 To install and run the website locally, follow these steps:
